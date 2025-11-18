@@ -5,6 +5,8 @@
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
     'exec-and-forget borders active_color="gradient(top_right=0xfff2cdcd,bottom_left=0xff89dceb) width=14.0 inactive_color=0x00000000"',
+    'exec-and-forget sketchybar --reload',
+    'exec-and-forget sketchybar',
 ]
 # Start AeroSpace at login
 start-at-login = true
@@ -171,3 +173,7 @@ shift-down = ['volume set 0', 'mode main']
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'secondary'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace 9'
