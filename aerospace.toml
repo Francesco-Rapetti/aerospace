@@ -68,7 +68,7 @@ inner.horizontal = 14
 inner.vertical = 14
 outer.left = 14
 outer.bottom = 14
-outer.top = 50
+outer.top = 20
 outer.right = 14
 
 # 'main' binding mode declaration
@@ -186,4 +186,12 @@ shift-down = ['volume set 0', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'ru.keepcoder.Telegram'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 9'
