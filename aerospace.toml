@@ -6,8 +6,9 @@
 after-startup-command = [
     'exec-and-forget borders active_color="gradient(top_right=0xfff2cdcd,bottom_left=0xff89dceb) inactive_color=0x00000000"',
     'exec-and-forget borders width=14.0',
-    # 'exec-and-forget sketchybar --reload',
     # 'exec-and-forget sketchybar',
+    # 'exec-and-forget sketchybar --reload',
+    # 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 # Start AeroSpace at login
 start-at-login = true
@@ -23,6 +24,13 @@ exec-on-workspace-change = [
     # '/usr/bin/osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\""',
     'curl "http://localhost:7776/aerospace/spaces/refresh?space=$AEROSPACE_FOCUSED_WORKSPACE"',
 ]
+
+# Notify Sketchybar about workspace change
+# exec-on-workspace-change = [
+#     '/bin/bash',
+#     '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+# ]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -71,7 +79,7 @@ inner.horizontal = 14
 inner.vertical = 14
 outer.left = 14
 outer.bottom = 14
-outer.top = 50
+outer.top = [{ monitor."Odyssey G93SC" = 50 }, { monitor."MQ16AHE" = 50 }, 20]
 outer.right = 14
 
 # 'main' binding mode declaration
